@@ -1,0 +1,20 @@
+[
+    {
+        "from": "delhi",
+        "to": "mysore",
+        "class": "Economy",
+        "departure": "2025-08-05",
+        "return": "2025-08-07",
+        "passengers": "6",
+        "timestamp": "2025-08-05 21:13:53"
+    },
+    {
+        "from": "delhi",
+        "to": "mysore",
+        "class": "Business",
+        "departure": "2025-08-05",
+        "return": "2025-08-07",
+        "passengers": "6",
+        "timestamp": "2025-08-05 21:16:29"
+    }
+]

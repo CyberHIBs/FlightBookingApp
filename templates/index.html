@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Likith Flight Booking 
+        (FlyWithUs)
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="brand">R Likhith Flights</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Flights</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="booking-card">
+            <h1>Book Your Flight</h1>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              <div class="flash-message">{{ messages[0] }}</div>
+              {% endif %}
+            {% endwith %}
+
+            <form action="/" method="POST">
+                <label for="from">From:</label>
+                <select name="from" required>
+                    <option value="">Select</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+
+                <label for="to">To:</label>
+                <select name="to" required>
+                    <option value="">Select</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+
+                <label for="class">Class:</label>
+                <select name="class" required>
+                    <option value="">Select</option>
+                    <option value="Economy">Economy</option>
+                    <option value="Business">Business</option>
+                </select>
+
+                <label for="departure">Departure Date:</label>
+                <input type="date" name="departure" required>
+
+                <label for="return">Return Date:</label>
+                <input type="date" name="return" required>
+
+                <label for="passengers">Number of Passengers:</label>
+                <input type="number" name="passengers" min="1" max="9" required>
+
+                <button type="submit">Search Flights</button>
+            </form>
+        </div>
+    </main>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
